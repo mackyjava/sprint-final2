@@ -9,24 +9,23 @@
         <table BORDER=1 WIDTH=700>
 
         <tr>
-            <td WIDTH=300 HEIGHT=300 valign="top">Lista de tareas<div id"listaT"></div>
+            <td WIDTH=300 HEIGHT=300 valign="top">Lista de tareas<div id="listaT"></div>
         
             </td>
 
-            <td WIDTH= 300 HEIGHT =300 valign ="top">lista de Pendientes<div id="listaP"></div>
+            <td WIDTH= 300 HEIGHT =300 valign ="top">lista de Pendientes de la semana<div id="listaP"><ul id="pendientes"></ul></div>
             </td>
 
         <td WIDTH=300 HEIGHT=300 valign ="top">De ultimo minuto y urgentes<div id ="listaU"></div>
         </td>
         </tr>
-        <input type="text" id= "agregaTarea" placeholder="Lista de tareas"/>
-        <button id= "crearT" onclick="crearT();">agregar</button>
+        <button id= "crearT" onclick="crearT();">agregar Lista de tareas</button>
             
         <input type="text" id= "agregaPendientes" placeholder="Lista de Pendientes"/>
-        <button id="crearP" onclick="crearP();">agregar</button>
+        <button id="crearP" onclick="agregarP();">agregar</button>
             
         <input type="text" id= "agregaUrgentes" placeholder="Tarea Urgente"/>
-        <button id ="crearU" onclick="crearU();">agregar</button>
+        <button id ="crearU" onclick ="agregarU(this);">agregar</button>
       </table>
       <script src ="assets/js/main.js"></script>
     </body>
