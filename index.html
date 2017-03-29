@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Trello</title>
+    </head>
+    <body>
+        <h1>Pizarron de Tareas y Pendientes</h1>
+        <table BORDER=1 WIDTH=700>
+
+        <tr>
+            <td WIDTH=300 HEIGHT=300 valign="top">Lista de tareas<div id"listaT"></div>
+        
+            </td>
+
+            <td WIDTH= 300 HEIGHT =300 valign ="top">lista de Pendientes<div id="listaP"></div>
+            </td>
+
+        <td WIDTH=300 HEIGHT=300 valign ="top">De ultimo minuto y urgentes<div id ="listaU"></div>
+        </td>
+        </tr>
+        <input type="text" id= "agregaTarea" placeholder="Lista de tareas"/>
+        <button id= "crearT" onclick="crearT();">agregar</button>
+            
+        <input type="text" id= "agregaPendientes" placeholder="Lista de Pendientes"/>
+        <button id="crearP" onclick="crearP();">agregar</button>
+            
+        <input type="text" id= "agregaUrgentes" placeholder="Tarea Urgente"/>
+        <button id ="crearU" onclick="crearU();">agregar</button>
+      </table>
+      <script src ="assets/js/main.js"></script>
+    </body>
+</html>
