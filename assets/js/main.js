@@ -48,7 +48,7 @@ function agregarU(){
         entrada.innerHTML=urgente;
         lista.appendChild(entrada);
          lista.appendChild(botonBorrar);
-          urgente.value=null;
+          document.getElementById("agregaUrgentes").value=null;
     
     botonBorrar.onclick= function(){
         var idEliminar=document.getElementById(this.value);
