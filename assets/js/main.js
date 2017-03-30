@@ -3,20 +3,39 @@ function Tarea(accion,fecha){
     this.fecha = fecha;
 }
 //funcion para crear lista tareas
- var elemento=[];
-function crearT(){
+var caja = [];
+function crearT() {
+    var nombreList=prompt("nombre de la lista");
     var elementos=parseInt(prompt("¿Cuantos elementos tiene tu lista?"));
-    var fecha=prompt("fecha limite")
-    var listaTarea =document.getElementById("listaP");
+    var fecha=prompt("fecha limite");
+    var listaTarea =document.getElementById("listaT");
+     listaTarea.innerHTML=nombreList +" "+ fecha;
     var listaCrear= document.createElement("ul");
         listaTarea.appendChild(listaCrear);
-    for(var i =1; i<=elemento.lenght ;i++){
-        elemento.push(elementos);
+    for(var i =0; i<elementos ;i++){
+        caja.push(i);
+    }console.log(caja);
+    var limite = caja.length;
+    console.log(limite);
+    for( var j =0; j<limite ;j++){
+    var accion = prompt("agrega elemento" + caja[j]);
     var nuevo= document.createElement("p");
-        elemento.value=accion +" "+fecha;
-        listaCrear.appendChild(elemento);
+    var botonBorrar= document.createElement("button");
+        nuevo.id=Date.now();
+        botonBorrar.value= nuevo.id;
+        botonBorrar.innerText= "realizado";
+        nuevo.innerText=accion;
+        listaCrear.appendChild(nuevo);
+        listaCrear.appendChild(botonBorrar);
+    botonBorrar.onclick= function(){
+        var idEliminar=document.getElementById(this.value);
+            listaCrear.removeChild(this);
+            listaCrear.removeChild(idEliminar);
+
+     }
     }
-}
+ }
+
  
 function agregarP(){
     var elemento =document.getElementById("agregaPendientes").value;
