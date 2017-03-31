@@ -7,7 +7,7 @@
     </head>
     <body>
         <h1>Pizarron de Tareas y Pendientes</h1>
-        <table BORDER=1 WIDTH=700>
+        <table BORDER=1 WIDTH=700 id ="tabla">
 
         <tr>
             <td WIDTH=300 HEIGHT=300 valign="top">Lista de tareas<div id="listaT"></div>
@@ -20,7 +20,7 @@
         <td WIDTH=300 HEIGHT=300 valign ="top">De ultimo minuto y urgentes<div id ="listaU"></div>
         </td>
         </tr>
-        <button id= "crearT" onclick="crearT();">agregar Lista de tareas</button>
+        <button id= "crearT" onclick="EntradaDatosListaNueva();">agregar Lista de tareas</button>
             
         <input type="text" id= "agregaPendientes" placeholder="Lista de Pendientes"/>
         <button id="crearP" onclick="agregarP();">agregar</button>

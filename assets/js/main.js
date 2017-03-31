@@ -4,37 +4,51 @@ function Tarea(accion,fecha){
 }
 //funcion para crear lista tareas
 var caja = [];
-function crearT() {
-    var nombreList=prompt("nombre de la lista");
-    var elementos=parseInt(prompt("¿Cuantos elementos tiene tu lista?"));
-    var fecha=prompt("fecha limite");
-    var listaTarea =document.getElementById("listaT");
-     listaTarea.innerHTML=nombreList +" "+ fecha;
-    var listaCrear= document.createElement("ul");
-        listaTarea.appendChild(listaCrear);
-    for(var i =0; i<elementos ;i++){
-        caja.push(i);
-    }console.log(caja);
-    var limite = caja.length;
-    console.log(limite);
-    for( var j =0; j<limite ;j++){
-    var accion = prompt("agrega elemento" + caja[j]);
-    var nuevo= document.createElement("p");
-    var botonBorrar= document.createElement("button");
-        nuevo.id=Date.now();
-        botonBorrar.value= nuevo.id;
-        botonBorrar.innerText= "realizado";
-        nuevo.innerText=accion;
-        listaCrear.appendChild(nuevo);
-        listaCrear.appendChild(botonBorrar);
-    botonBorrar.onclick= function(){
-        var idEliminar=document.getElementById(this.value);
+function EntradaDatosListaNueva() {
+    var nombreList= document.createElement("input");
+    var btnEnviar=document.createElement("button")
+    var listaTarea =document.getElementById("tabla");
+        listaTarea.appendChild(nombreList);
+        listaTarea.appendChild(btnEnviar);
+        btnEnviar.innerText= "Crear lista";
+    btnEnviar.onclick = function(){
+     var listaImprimirNombre=document.getElementById("listaT")
+     var listaCrear= document.createElement("ul");
+     var botonBorrar=document.createElement("button");  
+        listaImprimirNombre.appendChild(listaCrear);
+        listaImprimirNombre.appendChild(botonBorrar);
+        listaCrear.innerHTML=nombreList.value;
+        botonBorrar.innerText="BorrarLista";
+        listaCrear.id= Date.now();
+        botonBorrar.value=listaCrear.id;
+        botonBorrar.onclick= function(){
+    var idEliminar=document.getElementById(this.value);
+         listaCrear.removeChild(this);
+         listaCrear.removeChild(idEliminar);
+
+        mostrarLista();
+     }
+    }   
+  }
+function mostrarLista(){
+        var entradaP =0;
+        var accion = prompt("agrega elemento" + caja[j]);
+        var nuevo= document.createElement("p");
+        var botonBorrar= document.createElement("button");
+            nuevo.id=Date.now();
+            botonBorrar.value= nuevo.id;
+            botonBorrar.innerText= "realizado";
+            nuevo.innerText=accion;
+            listaCrear.appendChild(nuevo);
+            listaCrear.appendChild(botonBorrar);
+            botonBorrar.onclick= function(){
+          var idEliminar=document.getElementById(this.value);
             listaCrear.removeChild(this);
             listaCrear.removeChild(idEliminar);
 
-     }
     }
- }
+}
+ 
 
  
 function agregarP(){
@@ -46,8 +60,8 @@ function agregarP(){
         botonBorrar.value =li.id;
         botonBorrar.innerText= "borrar";
         li.innerHTML=elemento;
-    botonBorrar.onclick= function(){
-        var idEliminar=document.getElementById(this.value);
+        botonBorrar.onclick= function(){
+         var idEliminar=document.getElementById(this.value);
            lista.removeChild(this);
            lista.removeChild(idEliminar);
         
